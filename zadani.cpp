@@ -1,18 +1,18 @@
-#include <iostream>
-#include <fstream>
-#include <windows.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string>
-using namespace std;
+#include <iostream> //pro input a output
+#include <fstream> //vypis uctenky do souboru
+#include <windows.h> //pro sleep
+#include <unistd.h> //pro pro pr√°ci s os
+#include <stdlib.h> //pro pr√°ci s datama
+#include <time.h> //pro random number
+#include <string> //abych mohl pouzit string, tedy text
+using namespace std; //abych nemusel psat std::
 
 int main() {
-    int random; //PromÏnn· na proklik z koöÌku
-    int rohlik = 0; //PoËet poloûky
-    int rohlikcena = 3; // Cena poloûky
-    int rohlikprice = 0; //PoËet poloûky*cena poloûky
-    int chleba = 0; //StejnÈ to je u vöeho
+    int random; //Prom√¨nn√° na proklik z ko≈°√≠ku
+    int rohlik = 0; //Po√®et polo≈æky
+    int rohlikcena = 3; // Cena polo≈æky
+    int rohlikprice = 0; //Po√®et polo≈æky*cena polo≈æky
+    int chleba = 0; //Stejn√© to je u v≈°eho
     int chlebacena = 35;
     int chlebaprice = 0;
     int horalka = 0;
@@ -36,8 +36,8 @@ int main() {
     int skrin = 0;
     int skrincena = 5000;
     int skrinprice = 0;
-    SetConsoleTitle("Potraviny u Hrocha"); //N·zev konzole
-    ofstream Uctenka("uctenka.txt"); //Vytvo¯enÌ textovÈho dokumentu
+    SetConsoleTitle("Potraviny u Hrocha"); //N√°zev konzole
+    ofstream Uctenka("uctenka.txt"); //Vytvo√∏en√≠ textov√©ho dokumentu
     mainmenu:
     system("CLS");
     cout << "Potraviny u Hrocha" << "\n";
@@ -53,7 +53,7 @@ int main() {
     cout << "--------------------" << "\n";
     int menuvolba;
     cin >> menuvolba;
-    switch(menuvolba) { //Switch na roz¯azenÌ do kategoriÌ
+    switch(menuvolba) { //Switch na roz√∏azen√≠ do kategori√≠
     case 1: {
         menupotraviny:
         system("CLS");
@@ -68,7 +68,7 @@ int main() {
         cout << "--------------------" << "\n";
         int potravinyvolba;
         cin >> potravinyvolba;
-        switch(potravinyvolba) { //Roz¯adnÌk v kategorii potraviny
+        switch(potravinyvolba) { //Roz√∏adn√≠k v kategorii potraviny
         case 1:{ //ROHLIK
             system("CLS");
             cout << "Potraviny u Hrocha" << "\n";
@@ -80,7 +80,7 @@ int main() {
             cout << "--------------------" << "\n";
             cout << "Kolik rohliku chcete?" << "\n";
             cin >> rohlik;
-            rohlikprice = rohlik * rohlikcena; //Matematika, vysvÏtleno naho¯e p¯i vyps·nÌ promÏnn˝ch a to se opakuje vöude stejnÏ
+            rohlikprice = rohlik * rohlikcena; //Matematika, vysv√¨tleno naho√∏e p√∏i vyps√°n√≠ prom√¨nn√Ωch a to se opakuje v≈°ude stejn√¨
             cout << "Vybral jste si " << rohlik << " rohliku za celkem " << rohlikprice << "Kc \n";
             Sleep(1500);
             goto menupotraviny;
@@ -278,7 +278,7 @@ int main() {
         cout << "Kosik" << "\n";
         cout << "--------------------" << "\n";
         if(rohlik >= 1) {
-            cout << "Rohlik | " << rohlik << "ks | " << rohlikprice << " Kc \n"; //Zobrazov·nÌ poloûek v koöÌku
+            cout << "Rohlik | " << rohlik << "ks | " << rohlikprice << " Kc \n"; //Zobrazov√°n√≠ polo≈æek v ko≈°√≠ku
         }
         if(chleba >= 1) {
             cout << "Chleb | " << chleba << "ks | " << chlebaprice << " Kc \n";
@@ -305,7 +305,7 @@ int main() {
             cout << "Skrin | " << skrin << "ks | " << skrinprice << " Kc \n";
         }
         int cenacelkem;
-        cenacelkem = rohlikprice+chlebaprice+horalkaprice+vodaprice+kofolaprice+redbullprice+stulprice+zidleprice+skrinprice;  //Matematika celkovÈ ceny
+        cenacelkem = rohlikprice+chlebaprice+horalkaprice+vodaprice+kofolaprice+redbullprice+stulprice+zidleprice+skrinprice;  //Matematika celkov√© ceny
         if(cenacelkem > 0){
         cout << "--------------------" << "\n";
         cout << "Cena celkem: " << cenacelkem << "Kc s DPH\n";
@@ -335,8 +335,8 @@ int main() {
         switch(volbaplatba) { //Volba platebni metody
             case 1: {
                 system("CLS");
-                int kupon; //Na tuto promÏnnou se klade ot·zka jestli z·kaznÌk m· s levov˝ kupÛn
-                string sleva; //Do tohoto stringu se zapisuje slevov˝ kÛd
+                int kupon; //Na tuto prom√¨nnou se klade ot√°zka jestli z√°kazn√≠k m√° s levov√Ω kup√≥n
+                string sleva; //Do tohoto stringu se zapisuje slevov√Ω k√≥d
                 cout << "Potraviny u Hrocha" << "\n";
                 cout << "--------------------" << "\n";
                 cout << "Mate slevovy kupon?" << "\n";
@@ -350,7 +350,7 @@ int main() {
                 cout << "Zadejte slevovy kupon:" << "\n";
                 cin >> sleva;}
                 if(sleva == "ILOVEPROGRAMOVANI") {
-                    stulprice = stulprice * 0.85; //Matika na odËÌt·nÌ 15%
+                    stulprice = stulprice * 0.85; //Matika na od√®√≠t√°n√≠ 15%
                     zidleprice = zidleprice * 0.85;
                     skrinprice = skrinprice * 0.85;
                     cout << "Sleva 15% na nabytek byla aktivovana\n";
@@ -361,18 +361,18 @@ int main() {
                 int platit=0;
                 int suma=0;
                 suma = rohlikprice+chlebaprice+horalkaprice+vodaprice+kofolaprice+redbullprice+stulprice+zidleprice+skrinprice;
-                int vratit=0; //PromÏnn· pro vracenÌ
+                int vratit=0; //Prom√¨nn√° pro vracen√≠
                 cout << "Zakaznik ma zaplatit " << suma << "Kc\nKolik zakaznik zaplatil?\n";
-                cin >> platit;  //VloûenÌ promÏnnÈ kolik z·kaznÌk zaplatil
+                cin >> platit;  //Vlo≈æen√≠ prom√¨nn√© kolik z√°kazn√≠k zaplatil
                 vratit = platit-suma;
-                cout << "Zakaznikovi je treba vratit " << vratit << "Kc\nPro pokracovani stisknete 1\n"; //ÿ·dek pro vyps·nÌ kolik m·m z·kaznÌkovi vr·tit
+                cout << "Zakaznikovi je treba vratit " << vratit << "Kc\nPro pokracovani stisknete 1\n"; //√ò√°dek pro vyps√°n√≠ kolik m√°m z√°kazn√≠kovi vr√°tit
                 cin >> random;
                 system("CLS");
                 cout << "Probiha tisk uctenky";
                 //UCTENKA
                     int fik;
                     srand (time(NULL));
-                    fik = rand() % 9999 + 1111; //fik = random s rozpÏtÌm od 9999 do 1111 aby to mÏlo ty 4 digity
+                    fik = rand() % 9999 + 1111; //fik = random s rozp√¨t√≠m od 9999 do 1111 aby to m√¨lo ty 4 digity
 
                     int pokladna;
                     srand (time(NULL));
@@ -393,7 +393,7 @@ int main() {
                 << "--------------------" << "\n"
                 << "Uctenka" << "\n"
                 << "--------------------" << "\n";
-                if(rohlik >= 1) { //stejnÏ jak u koöÌku
+                if(rohlik >= 1) { //stejn√¨ jak u ko≈°√≠ku
                     Uctenka << "Rohlik | " << rohlik << "ks | " << rohlikprice << " Kc \n";
                 }
                 if(chleba >= 1) {
@@ -423,7 +423,7 @@ int main() {
                 int cenacelkem;
                 int jednaku;
                 srand (time(NULL));
-                jednaku = rand() % 1000 + 1; //Gener·tor pro 1 ku 1000 na n·kup zdarma
+                jednaku = rand() % 1000 + 1; //Gener√°tor pro 1 ku 1000 na n√°kup zdarma
                 if(jednaku == 500){
                     cenacelkem =0;
                 }else{
@@ -438,19 +438,19 @@ int main() {
                 Uctenka << "FIK: " << fik << "\n";
                 Uctenka << "PKN: " << pkn << "\n";
                 Uctenka << "--------------------" << "\n";
-                if(cenacelkem >= 10000){ //Pokud celkov· cena je vÏtöÌ jak 10K tak to vypÌöe do ˙Ëtenky ûe vyhr·l lednici
+                if(cenacelkem >= 10000){ //Pokud celkov√° cena je v√¨t≈°√≠ jak 10K tak to vyp√≠≈°e do √∫√®tenky ≈æe vyhr√°l lednici
                     Uctenka << "Vyhral jste lednici, ukazte uctenku u vydeje zobzi\n";
                     Uctenka << "--------------------" << "\n";
 
                 }
-                Uctenka << "Pokladna: " << pokladna << "\n"; //Vyps·nÌ ËÌsla pokladny
-                if(prodejna == 1) { //If na jakÈ prodejnÏ se to nach·zÌ
+                Uctenka << "Pokladna: " << pokladna << "\n"; //Vyps√°n√≠ √®√≠sla pokladny
+                if(prodejna == 1) { //If na jak√© prodejn√¨ se to nach√°z√≠
                     Uctenka << "Prodejna: Suchdol\n";
                 }
                 if(prodejna == 2) {
                     Uctenka << "Prodejna: Dejvice\n";
                 }
-                if(pokladni == 1) { //If na pokladnÌho
+                if(pokladni == 1) { //If na pokladn√≠ho
                     Uctenka << "Pokladni: Pepa\n";
                 }
                 if(pokladni == 2) {
@@ -459,7 +459,7 @@ int main() {
                 if(pokladni == 3) {
                     Uctenka << "Pokladni: Hammond\n";
                 }
-                if(sleva == "ILOVEPROGRAMOVANI") { //Vyps·nÌ slevy na n·bytek
+                if(sleva == "ILOVEPROGRAMOVANI") { //Vyps√°n√≠ slevy na n√°bytek
                 Uctenka << "--------------------" << "\n";
                 Uctenka << "Sleva na nabytek 15% byla uplatnena" << "\n";
                 }
@@ -498,7 +498,7 @@ int main() {
                 cout << "Zadejte pin" << "\n";
                 cout << "--------------------" << "\n";
                 cin >> pin;
-                if(pin == 1234) { //Platba kartou takûe ot·zka na PIN
+                if(pin == 1234) { //Platba kartou tak≈æe ot√°zka na PIN
                         cout << "Platba probehla\nProbiha tisk uctenky";
                         Uctenka << "Potraviny u Hrocha" << "\n";
                         //Uctenka  (stejnej postup jako u te nahore)
@@ -562,7 +562,7 @@ int main() {
                         Uctenka << "--------------------" << "\n";
                         Uctenka << "Cena celkem: " << cenacelkem << "Kc s DPH\n";
                         Uctenka << cenacelkem*0.79 << "Kc bez DPH\n";
-                        Uctenka << "--------------------" << "\n"; //Jedinn˝ rozdÌl a to ûe se neukazuje kolik ËlovÏk zaplatil a kolik m· vr·tit
+                        Uctenka << "--------------------" << "\n"; //Jedinn√Ω rozd√≠l a to ≈æe se neukazuje kolik √®lov√¨k zaplatil a kolik m√° vr√°tit
                         Uctenka << "Zaplaceno kartou\n";
                         Uctenka << "--------------------" << "\n";
                         Uctenka << "FIK: " << fik << "\n";
